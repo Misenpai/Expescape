@@ -15,4 +15,5 @@
     <color name="textColorSecondary">#767587</color>
     <color name="textColorTertiary">#A1A1AB</color>
     <color name="colorControlNormal">#A1A1AB</color>
+    <color name="violet20">#EEE5FF</color>
 </resources>
