@@ -1,4 +1,4 @@
-package com.example.expescape.Fragments
+package com.example.expescape.Fragments.mainapp
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

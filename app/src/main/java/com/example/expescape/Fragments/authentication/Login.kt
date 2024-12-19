@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import com.example.expescape.Fragments.Dashboard
+import com.example.expescape.Fragments.mainapp.Dashboard
 import com.example.expescape.MainActivity
 import com.example.expescape.R
 

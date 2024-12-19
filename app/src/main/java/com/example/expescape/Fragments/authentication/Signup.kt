@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import com.example.expescape.MainActivity
 import com.example.expescape.R
-import com.example.expescape.Fragments.Dashboard
+import com.example.expescape.Fragments.mainapp.Dashboard
 
 class Signup : Fragment() {
 
