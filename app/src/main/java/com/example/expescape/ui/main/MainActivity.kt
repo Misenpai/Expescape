@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.expescape.R
+import com.example.expescape.ui.main.fragments.Dashboard
 import com.example.expescape.ui.onboarding.Onboarding
 import com.example.expescape.ui.onboarding.loginsignup
 import dagger.hilt.android.AndroidEntryPoint
@@ -22,13 +23,15 @@ class MainActivity : AppCompatActivity() {
 
     fun loadFragment(fragment: Fragment) {
         val transaction = supportFragmentManager.beginTransaction()
-        if (fragment is loginsignup) {
+
+        if (fragment is loginsignup || fragment is Dashboard) {
             for (i in 0 until supportFragmentManager.backStackEntryCount) {
                 supportFragmentManager.popBackStack()
             }
         }
+
         transaction.replace(R.id.fragment_container, fragment)
-        if (fragment !is Onboarding) {
+        if (fragment !is Onboarding && fragment !is Dashboard) {
             transaction.addToBackStack(null)
         }
 
@@ -37,10 +40,10 @@ class MainActivity : AppCompatActivity() {
 
     override fun onBackPressed() {
         val currentFragment = supportFragmentManager.findFragmentById(R.id.fragment_container)
-        if (currentFragment is loginsignup) {
-            finish()
-        } else {
-            super.onBackPressed()
+        when (currentFragment) {
+            is loginsignup -> finish()
+            is Dashboard -> finish()
+            else -> super.onBackPressed()
         }
     }
 }
