@@ -1,11 +1,14 @@
-package com.example.expescape
+package com.example.expescape.ui.main
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.example.expescape.Fragments.Onboarding
-import com.example.expescape.Fragments.authentication.loginsignup
+import com.example.expescape.R
+import com.example.expescape.ui.onboarding.Onboarding
+import com.example.expescape.ui.onboarding.loginsignup
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -1,107 +1,113 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/colorBackground"
-    tools:context=".Fragments.Signup">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <include
-        android:id="@+id/appbar_signup"
-        layout="@layout/appbar_signup"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.expescape.ui.auth.AuthViewModel" />
+    </data>
 
-    <EditText
-        android:id="@+id/signup_name_textfield"
-        android:layout_width="343dp"
-        android:layout_height="56dp"
-        android:layout_marginBottom="40dp"
-        android:background="@drawable/rectangular_fields"
-        android:fontFamily="@font/inter"
-        android:hint="Name"
-        android:inputType="text"
-        android:paddingLeft="20dp"
-        android:textColor="@color/design_default_color_on_secondary"
-        android:textColorHint="@color/colorControlNormal"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/signup_email_textfield"
-        app:layout_constraintEnd_toEndOf="@+id/signup_email_textfield"
-        app:layout_constraintStart_toStartOf="@+id/signup_email_textfield" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorBackground"
+        tools:context=".ui.auth.fragments.Signup">
 
-    <EditText
-        android:id="@+id/signup_email_textfield"
-        android:layout_width="343dp"
-        android:layout_height="56dp"
-        android:layout_marginBottom="40dp"
-        android:background="@drawable/rectangular_fields"
-        android:fontFamily="@font/inter"
-        android:hint="Email"
-        android:inputType="textEmailAddress"
-        android:paddingLeft="20dp"
-        android:textColor="@color/design_default_color_on_secondary"
-        android:textColorHint="@color/colorControlNormal"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/signup_password_textfield"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent" />
+        <include
+            android:id="@+id/appbar_signup"
+            layout="@layout/appbar_signup"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/signup_password_textfield"
-        android:layout_width="343dp"
-        android:layout_height="56dp"
-        android:layout_marginBottom="100dp"
-        android:background="@drawable/rectangular_fields"
-        android:fontFamily="@font/inter"
-        android:hint="Password"
-        android:inputType="textPassword"
-        android:paddingLeft="20dp"
-        android:textColor="@color/design_default_color_on_secondary"
-        android:textColorHint="@color/colorControlNormal"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/signup_btn"
-        app:layout_constraintEnd_toEndOf="@+id/signup_btn"
-        app:layout_constraintStart_toStartOf="@+id/signup_btn" />
+        <EditText
+            android:id="@+id/signup_name_textfield"
+            android:layout_width="343dp"
+            android:layout_height="56dp"
+            android:layout_marginBottom="40dp"
+            android:background="@drawable/rectangular_fields"
+            android:fontFamily="@font/inter"
+            android:hint="Name"
+            android:inputType="text"
+            android:paddingLeft="20dp"
+            android:textColor="@color/design_default_color_on_secondary"
+            android:textColorHint="@color/colorControlNormal"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/signup_email_textfield"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
-        android:id="@+id/signup_btn"
-        android:layout_width="341dp"
-        android:layout_height="60dp"
-        android:layout_marginBottom="20dp"
-        android:backgroundTint="@color/colorPrimary"
-        android:fontFamily="@font/poppins_bold"
-        android:text="Signup"
-        android:textColor="@color/colorOnPrimary"
-        android:textSize="20sp"
-        app:cornerRadius="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        <EditText
+            android:id="@+id/signup_email_textfield"
+            android:layout_width="343dp"
+            android:layout_height="56dp"
+            android:layout_marginBottom="40dp"
+            android:background="@drawable/rectangular_fields"
+            android:fontFamily="@font/inter"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:paddingLeft="20dp"
+            android:textColor="@color/design_default_color_on_secondary"
+            android:textColorHint="@color/colorControlNormal"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/signup_password_textfield"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:text="or with"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/signupGoogle"
-        app:layout_constraintEnd_toEndOf="@+id/signupGoogle"
-        app:layout_constraintStart_toStartOf="@+id/signupGoogle" />
+        <EditText
+            android:id="@+id/signup_password_textfield"
+            android:layout_width="343dp"
+            android:layout_height="56dp"
+            android:layout_marginBottom="100dp"
+            android:background="@drawable/rectangular_fields"
+            android:fontFamily="@font/inter"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:paddingLeft="20dp"
+            android:textColor="@color/design_default_color_on_secondary"
+            android:textColorHint="@color/colorControlNormal"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/signup_btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
-    <ImageButton
-        android:id="@+id/signupGoogle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="23dp"
-        android:layout_marginBottom="100dp"
-        android:backgroundTint="@color/colorOnSecondary"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/signupwithgoogle" />
+        <Button
+            android:id="@+id/signup_btn"
+            android:layout_width="341dp"
+            android:layout_height="60dp"
+            android:layout_marginBottom="20dp"
+            android:backgroundTint="@color/colorPrimary"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Signup"
+            android:textColor="@color/colorOnPrimary"
+            android:textSize="20sp"
+            app:cornerRadius="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/textView3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:text="or with"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/signupGoogle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageButton
+            android:id="@+id/signupGoogle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="100dp"
+            android:backgroundTint="@color/colorOnSecondary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/signupwithgoogle" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
