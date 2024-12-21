@@ -148,8 +148,9 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="@android:color/transparent"
-                    android:text="Add Description"
+                    android:hint="Add Description"
                     android:textColor="#000000"
+                    android:textColorHint="@color/colorControlNormal"
                     android:textSize="16sp" />
 
             </LinearLayout>
@@ -228,7 +229,7 @@
             android:layout_height="match_parent">
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/save_btn"
                 android:layout_width="341dp"
                 android:layout_height="60dp"
                 android:layout_marginTop="10dp"
